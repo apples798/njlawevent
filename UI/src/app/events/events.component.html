@@ -1,0 +1,18 @@
+  <mat-list>
+    <div mat-subheader>Current Events</div>
+      <mat-list-item *ngFor="let event of events">
+        <div class="left">
+          <span mat-line>
+            <a href="/eventdetails?id={{event.id}}">{{event.tttle}}</a>
+          </span>
+          <span mat-line>
+            {{event.date | date}}
+          </span>
+        </div>
+       </mat-list-item>
+
+  </mat-list>
+
+  <mat-spinner mode="indeterminate" *ngIf="events.length<1"></mat-spinner>
+ 
+  
