@@ -3,14 +3,6 @@ import {MatCardModule} from '@angular/material/card';
 import { ActivatedRoute } from '@angular/router';
 import { EventService } from '../events/event.service';
 
-// export interface EventDetails {
-//   eventId: number;
-//   eventTitle: string;
-//   eventDate: Date;
-//   eventDescription: string,
-//   eventNote: string
-
-// }
 
 @Component({
   selector: 'app-eventdetails',
@@ -35,15 +27,7 @@ export class EventdetailsComponent implements OnInit {
 
     this.getEventById();
   }
-  // eventDetails: EventDetails=
-  //   {
-  //     eventId: 1,
-  //     eventTitle: 'Test Event 1',
-  //     eventNote:'Please bring you colors to enjoy with others',
-  //     eventDate: new Date('Febuery 7, 2023'),
-  //     eventDescription: 'Enjoy Holi day celeberations'
-  //   };
-
+ 
     getEventById() {
       this.api.getEventById(this.id).subscribe((results) =>  {
         this.eventDetails= results;
